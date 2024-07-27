@@ -1,5 +1,6 @@
 document.getElementById('surpriseButton').addEventListener('click', function() {
     document.getElementById('surpriseMessage').classList.toggle('hidden');
+    playMusic();
 });
 
 // Countdown Timer
@@ -19,8 +20,13 @@ function calculateTimeTogether() {
 
 setInterval(calculateTimeTogether, 1000);
 
-// Play music on page load
-window.addEventListener('load', function() {
+// Play music on page load after user interaction
+function playMusic() {
     const music = document.getElementById('romanticMusic');
-    music.play();
-});
+    music.play().catch(error => {
+        console.log('Music playback failed:', error);
+    });
+}
+
+// Add a user interaction event to ensure music plays
+document.addEventListener('click', playMusic, { once: true });

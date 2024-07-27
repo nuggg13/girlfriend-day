@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
+    background-color: #FF6FFF;
     color: #333;
     text-align: center;
     padding: 50px;
@@ -44,4 +44,31 @@ audio {
 #countdown {
     font-size: 24px;
     margin: 20px 0;
+}
+
+.timeline {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.timeline h2 {
+    text-align: center;
+    color: #ff69b4;
+}
+
+.timeline-event {
+    background: #ffeff7;
+    padding: 10px;
+    margin: 10px 0;
+    border-left: 5px solid #ff69b4;
+    border-radius: 5px;
+}
+
+.timeline-event h3 {
+    margin: 0;
+    color: #ff1493;
+}
+
+.timeline-event p {
+    margin: 5px 0 0;
 }
