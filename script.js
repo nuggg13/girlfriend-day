@@ -1,6 +1,7 @@
 document.getElementById('surpriseButton').addEventListener('click', function() {
     document.getElementById('surpriseMessage').classList.toggle('hidden');
     playMusic();
+    createLoves();
 });
 
 // Countdown Timer
@@ -30,3 +31,20 @@ function playMusic() {
 
 // Add a user interaction event to ensure music plays
 document.addEventListener('click', playMusic, { once: true });
+
+function createLoves() {
+    const loveContainer = document.getElementById('loveContainer');
+    const loveCount = 10;
+
+    for (let i = 0; i < loveCount; i++) {
+        const love = document.createElement('div');
+        love.className = 'love';
+        love.style.left = Math.random() * 100 + 'vw';
+        love.style.animationDelay = Math.random() * 2 + 's';
+        loveContainer.appendChild(love);
+
+        love.addEventListener('animationend', function() {
+            love.remove();
+        });
+    }
+}
